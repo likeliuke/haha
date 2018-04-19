@@ -1,0 +1,49 @@
+<html>
+<body>
+<script type="text/javascript">
+function ajaxFunction(){
+var xmlHttp;
+<!--兼容性处理-->
+try{
+    //火狐等
+	xmlHttp = new XMLHttpRequest();
+	}
+	catch(e)
+	{
+		try{
+		    //ie6+
+			xmlHttp = new ActionXObject("Msxml2.XMLHTTP");
+		}
+		catch(e)
+		{
+			try{
+				//ie5+
+				xmlHttp = new ActionXObject("Microsoft.XMLHTTP");
+			}
+			catch(e)
+			{
+				alert("浏览器不支持！");
+				return false;
+			}
+		}
+	}
+	//发送请求
+	xmlHttp.open("get","",true);
+	//绑定事件
+	xmlHttp.onreadystatechange=function()
+	{
+		if(xmlHttp.readyState==4){
+		//从服务器的response获得数据
+		var txt = xmlHttp.responseText;
+		}
+	}
+	
+	xmlHttp.send(null);
+}
+</script>
+<form name="my">
+user:<input type="text" name="username" />
+time:<input type="text" name="time" />
+</form>
+</body>
+</html>
