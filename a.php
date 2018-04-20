@@ -4,6 +4,10 @@
 
 123456789
 
+<<<<<<< HEAD
 master
 
 master 111
+=======
+lking
+>>>>>>> lking
